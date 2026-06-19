@@ -1,0 +1,134 @@
+.section {
+  position: relative;
+  background: #1B3A4B;
+  padding: 96px 0;
+  overflow: hidden;
+}
+
+.bg {
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.25;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(27,58,75,0.85) 0%, rgba(27,58,75,0.65) 100%);
+}
+
+.inner {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* ── Başlık ── */
+.header {
+  margin-bottom: 56px;
+}
+
+.tagPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin-bottom: 18px;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.tagX {
+  color: #C4622D;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.tagText {
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 600;
+}
+
+.heading {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(1.75rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.25;
+  margin: 0;
+  max-width: 560px;
+}
+
+.headingAccent {
+  font-family: var(--font-dancing), cursive;
+  font-weight: 400;
+  color: #C4622D;
+  font-size: clamp(2.1rem, 3.5vw, 3.1rem);
+  line-height: 1.1;
+  display: inline;
+}
+
+/* ── Kartlar ── */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 220ms ease, box-shadow 220ms ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+}
+
+.iconCircle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(44, 44, 44, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #1B3A4B;
+  margin-bottom: 4px;
+  flex-shrink: 0;
+}
+
+.iconNumber {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1B3A4B;
+}
+
+.cardTitle {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 0;
+  line-height: 1.3;
+}
+
+.cardDesc {
+  font-size: 0.825rem;
+  color: rgba(44, 44, 44, 0.6);
+  line-height: 1.65;
+  margin: 0;
+  flex: 1;
+}

@@ -1,0 +1,76 @@
+import { defineType, defineField } from 'sanity';
+
+const ICON_LIST = [
+  { title: '🛋️ Kanepe',          value: 'Couch' },
+  { title: '💺 Koltuk',          value: 'Armchair' },
+  { title: '🪑 Sandalye',        value: 'Chair' },
+  { title: '🏠 Ev',              value: 'House' },
+  { title: '💡 Lamba',           value: 'Lamp' },
+  { title: '🎨 Palet',           value: 'Palette' },
+  { title: '🖌️ Boya Fırçası',    value: 'PaintBrush' },
+  { title: '🖼️ Boya Rulosu',     value: 'PaintRoller' },
+  { title: '📐 Cetvel',          value: 'Ruler' },
+  { title: '⭐ Yıldız',          value: 'Star' },
+  { title: '✨ Parlaklık',        value: 'Sparkle' },
+  { title: '💎 Elmas',           value: 'Diamond' },
+  { title: '👑 Taç',             value: 'Crown' },
+  { title: '🪄 Sihirli Değnek',  value: 'MagicWand' },
+  { title: '🌿 Yaprak',          value: 'Leaf' },
+  { title: '🌱 Bitki',           value: 'Plant' },
+  { title: '🌸 Çiçek',           value: 'Flower' },
+  { title: '❤️ Kalp',            value: 'Heart' },
+  { title: '🛡️ Kalkan',          value: 'Shield' },
+  { title: '🏆 Kupa',            value: 'Trophy' },
+  { title: '🏅 Madalya',         value: 'Medal' },
+  { title: '🎖️ Sertifika',       value: 'Certificate' },
+  { title: '✅ Onay',            value: 'CheckCircle' },
+  { title: '🔧 Anahtar',         value: 'Wrench' },
+  { title: '🔥 Ateş / Şömine',  value: 'Fire' },
+  { title: '☀️ Güneş',           value: 'Sun' },
+  { title: '🟦 Küp / 3D',        value: 'Cube' },
+];
+
+export default defineType({
+  name: 'aboutPageServices',
+  title: 'Hakkımızda — Hizmetler Bölümü',
+  type: 'document',
+  fields: [
+    defineField({
+      name: 'active',
+      title: '🟢 Bölümü Aktif Et',
+      type: 'boolean',
+      description: 'Kapalıysa Hakkımızda sayfasındaki Hizmetler bölümü görünmez.',
+      initialValue: true,
+    }),
+    defineField({ name: 'tag',           title: 'Etiket',                          type: 'string', initialValue: 'Hizmetlerimiz' }),
+    defineField({ name: 'heading',       title: 'Başlık (normal font)',             type: 'string' }),
+    defineField({ name: 'headingAccent', title: 'Başlık Vurgu (el yazısı, turuncu)', type: 'string' }),
+    defineField({ name: 'bgImage', title: 'Arka Plan Görseli', type: 'image', options: { hotspot: true } }),
+    defineField({
+      name: 'cards',
+      title: 'Hizmet Kartları (en fazla 3)',
+      type: 'array',
+      of: [
+        {
+          type: 'object',
+          name: 'card',
+          title: 'Hizmet Kartı',
+          fields: [
+            defineField({
+              name: 'icon',
+              title: 'İkon',
+              type: 'string',
+              options: { list: ICON_LIST, layout: 'dropdown' },
+            }),
+            defineField({ name: 'title',       title: 'Başlık',      type: 'string' }),
+            defineField({ name: 'description', title: 'Açıklama',    type: 'text', rows: 3 }),
+            defineField({ name: 'buttonText',  title: 'Buton Metni', type: 'string', initialValue: 'İncele' }),
+            defineField({ name: 'buttonHref',  title: 'Buton Linki', type: 'string' }),
+          ],
+          preview: { select: { title: 'title', subtitle: 'icon' } },
+        },
+      ],
+      validation: (Rule) => Rule.max(3),
+    }),
+  ],
+});

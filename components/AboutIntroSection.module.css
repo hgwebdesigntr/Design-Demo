@@ -1,0 +1,134 @@
+.section {
+  background: #FAFAF8;
+  padding: 96px 0;
+}
+
+.inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+@media (min-width: 900px) {
+  .inner {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ── Etiket ── */
+.tagPill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid rgba(44, 44, 44, 0.18);
+  border-radius: 999px;
+  padding: 6px 16px;
+  margin-bottom: 20px;
+  background: white;
+}
+
+.tagX {
+  color: #C4622D;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.tagText {
+  font-size: 10px;
+  letter-spacing: 0.32em;
+  text-transform: uppercase;
+  color: rgba(44, 44, 44, 0.55);
+  font-weight: 600;
+}
+
+/* ── İçerik ── */
+.heading {
+  font-family: var(--font-playfair), Georgia, serif;
+  font-size: clamp(1.75rem, 3vw, 2.6rem);
+  font-weight: 700;
+  color: #1a1a1a;
+  line-height: 1.25;
+  margin: 0 0 20px;
+}
+
+.headingAccent {
+  font-family: var(--font-dancing), cursive;
+  font-weight: 400;
+  color: #C4622D;
+  font-size: clamp(2.1rem, 3.5vw, 3.1rem);
+  line-height: 1.1;
+  display: inline;
+}
+
+.description {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-bottom: 28px;
+  color: rgba(44, 44, 44, 0.65);
+  font-size: 0.9rem;
+  line-height: 1.75;
+}
+
+.description p {
+  margin: 0;
+}
+
+.featureList {
+  list-style: none;
+  margin: 0 0 36px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+.featureItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 0.875rem;
+  color: rgba(44, 44, 44, 0.82);
+  font-weight: 500;
+}
+
+.bullet {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #C4622D;
+  flex-shrink: 0;
+}
+
+/* ── Görsel ── */
+.imageWrap {
+  position: relative;
+  height: 500px;
+  border-radius: 28px;
+  overflow: hidden;
+  background: #E8EDE8;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.imagePlaceholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(145deg, #dce6dc 0%, #c8d4c8 100%);
+}
+
+.imageAccent {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 40%;
+  background: linear-gradient(to top, rgba(27, 58, 75, 0.18) 0%, transparent 100%);
+  pointer-events: none;
+}

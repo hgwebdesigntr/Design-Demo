@@ -1,0 +1,139 @@
+/* ── HomeReviewsPanel ── */
+.wrapper {
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+  text-decoration: none;
+}
+
+.darkSection {
+  position: relative;
+  min-height: 320px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 28px 20px;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(15, 25, 18, 0.62);
+}
+
+.gradientBg {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(150deg, #1a2f1e 0%, #0d1710 100%);
+}
+
+.laurelRow {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.awardText {
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+  max-width: 100px;
+  margin: 0;
+}
+
+.starBadge {
+  position: relative;
+  z-index: 1;
+}
+
+.reviewersRow {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2.5px solid rgba(255, 255, 255, 0.55);
+  flex-shrink: 0;
+  position: relative;
+}
+
+.avatarFallback {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 2.5px solid rgba(255, 255, 255, 0.55);
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background set via inline style (dynamic gradient) */
+}
+
+.ratingCircle {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.55);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  backdrop-filter: blur(4px);
+}
+
+.ratingValue {
+  color: #fff;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.bottomBar {
+  background: #fff;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid #f0f0f0;
+}
+
+.ratingLabel {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.ratingStar {
+  color: #fbbf24;
+  font-size: 16px;
+  line-height: 1;
+}
+
+.ratingText {
+  font-weight: 700;
+  font-size: 13px;
+  color: #111;
+}
+
+.reviewCount {
+  font-size: 13px;
+  color: #999;
+}
+.aboutCard {
+  border: 1px solid #000;
+  border-radius: 0 0 200px 200px;
+}
