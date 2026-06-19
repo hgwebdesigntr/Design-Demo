@@ -1,4 +1,5 @@
-import { defineConfig } from 'sanity';
+import { defineConfig, createMockAuthStore } from 'sanity';
+import { createClient } from '@sanity/client';
 import { structureTool } from 'sanity/structure';
 import { visionTool } from '@sanity/vision';
 import { schemas } from './sanity/schemas';
@@ -8,6 +9,22 @@ export default defineConfig({
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'placeholder',
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
   title: 'Armel Design Panel',
+  auth: createMockAuthStore({
+    client: createClient({
+      projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'placeholder',
+      dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
+      token: process.env.NEXT_PUBLIC_SANITY_STUDIO_TOKEN,
+      useCdn: false,
+      apiVersion: '2024-01-01',
+    }),
+    currentUser: {
+      id: 'studio-admin',
+      name: 'Admin',
+      email: 'admin@studio.local',
+      role: 'administrator',
+      roles: [{ name: 'administrator', title: 'Administrator' }],
+    },
+  }),
   plugins: [
     structureTool({
       structure: (S) =>
